@@ -2,13 +2,16 @@
 
 - type: github
   icon: "fab fa-github"
+  url: 'https://github.com/meti-94/'
 
 - type: twitter
   icon: "fa-brands fa-x-twitter"
+  url: 'https://twitter.com/mehdi02896710'
 
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
+  
 
 - type: rss
   icon: "fas fa-rss"
