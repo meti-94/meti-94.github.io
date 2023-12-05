@@ -1,3 +1,9 @@
+---
+# the default layout is 'page'
+icon: fas fa-info-circle
+order: 4
+---
+
 # About Me 👋
 
 Hello there! I'm **Mohammad Mehdi Jafari**, but you can just call me **Meti**. 🚀
