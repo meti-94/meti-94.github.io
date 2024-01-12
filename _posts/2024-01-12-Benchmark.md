@@ -1,9 +1,10 @@
+---
 title: Unveiling the Synergy: A Comparative Analysis of the Latest Language Model Benchmarks
 date: 2024-01-12 11:30:00 +0350
 categories: [Comparison, Academic Reading]
 tags: [llms, benchmark]     # TAG names should always be lowercase
 mermaid: true
-
+---
 # Introduction
 
 In light of the hype around Large Language Models (LLMs) — a phenomenon I don't consider entirely fictional — every actor in this realm begins showering compliments on its published model. However, amidst the accolades, a crucial question looms: Is there a standard benchmark for evaluating the true power of these language-processing monsters? In this concise exploration, I'll share my general thoughts on the efficiency and features of different popular LLMs as of the current time. Despite delving into paper readings and rigorous number comparisons, I strive to maintain an abstract tone that engages any reader, while also ensuring an unbiased view and reproducible results. I aim to keep this information regularly updated.
