@@ -1,10 +1,8 @@
----
 title: Unveiling the Synergy: A Comparative Analysis of the Latest Language Model Benchmarks
 date: 2024-01-12 11:30:00 +0350
 categories: [Comparison, Academic Reading]
 tags: [llms, benchmark]     # TAG names should always be lowercase
 mermaid: true
----
 
 # Introduction
 
