@@ -1,0 +1,99 @@
+---
+title: Logic in AI/ML: Insights & Applications
+date: 2024-04-12 10:25:00 +0200
+categories: [Summarization, Academic Reading]
+tags: [logic]     # TAG names should always be lowercase
+mermaid: true
+---
+# Introduction
+
+I wanted to summarize my understanding of the introductory paper named "A Bluffer's guide to Logic for Machine Learners" by Frank van Harmelen. I rearranged the content to make it more intuitive for myself and to have a quick reference for the future. I hope this will be helpful to others in the field. This note will begin with a series of informal definitions and topics. Other topics will be introduced based on their relation to the initial ones. This way, I have attempted to follow an incremental model for viewing the landscape.
+
+# Principals
+
+As the mathematics tools (equations, proofs...) and logic are being used in (totally) different ways by AI people compared to others it may be necessary to draw a boundary around the concepts that AI people are going to use more often and make the differences more clear. 
+
+Let's start with **Logic** itself. 
+
+ - Philosophers: Logic is the laws of correct reasoning
+ - Mathematicians: Logic is a part of math fundamentals for example when
+   *Contradiction* is being used.
+ - AI People: Logic is a way of describing the world.
+
+Using equations or logic to describe the world will bring some advantages. As math/logic is totally independent of the real world it provides unique properties
+
+ - Application: getting one rule and applying it to a specific case
+ - Derivation: driving new descriptions from available descriptions
+
+It is important to consider how a specific formula can be interpreted, in addition to its logical meaning. Physicians and AI people tend to reflect the real/unreal world in the logic so the logic in their methodology is interpreted with relation to world objects or properties. On the other hand, logicians see the interpretation as a matter of linking symbols to proper math structures. In the former terminology, the relation of the world and its description has essential meaning. 
+
+Any mathematical/logical description of the world can be boiled down into a boundary between the worlds it will be working in and the rest of the other worlds. 
+
+After this brief introduction to the most common terms in this domain, it is worth mentioning that the word *"model"* is also used with different meanings regarding the application.
+
+ - In physics: it is a formal description of the world which is true in
+   all the states of the world.
+ - In AI: it is a formal description of the world (mostly) without
+   derivation quality.
+ - In Logic: a possible state of the world that makes an equation true
+   is a model.
+
+After seeing the interconnectivity of the model, formula, and world it is time to make an intuitive comparison. The formula is getting stronger (IMO more specific) as the number of worlds it can be applied to is getting smaller. There are two possible ways to make a formula stronger. In relation to *Worlds methodology*, indicating that a formula is always correct in a subset of worlds which another formula marked (in which to be correct) is a way of driving the former from later or entailment. Not surprisingly driving such a thing is possible from pure formal proofs which I will be referring to as *Formal Derivation methodology*. 
+
+
+The dilemma in methods one may be using for derivation is the source of two related new properties. 
+Soundness: *Formal Derivation methodology* proof can lead to *Worlds methodology* proof. 
+Correctness: Reverse of the soundness. 
+I saw a pretty good explanation using "contraposition" online which said:
+
+> Soundness means that you cannot prove anything that's wrong. Completeness means that you can prove anything that's right.
+
+In addition to what is mentioned above, the count of the worlds with the ability to satisfy a formula will determine important properties of the formula. A formula with 0 working worlds is *unsatisfiable* while having more than 0 is a measure of *satisfiability*. Things can get even more mathematically demanding as the worlds can be weighted based on their prior probability. There is also another measure named Max-satisfiability which can be defined on CNF (it will be introduced later). 
+
+Finally, the *Model* is also involved, for example, it is important to determine if a model satisfies with a given world (set of constraints) or if the number of such worlds can be used as a measure for the probability of the model (even in a weighted setting). 
+
+Now the famous word *deduction*  comes into play. The process of inferring conclusion Theta from Gama is following formal syntactic rules or following semantics that there is no single world that satisfies the conjunction of the Gama and the reverse of the Theta (again contraposition).
+
+
+# Famous Normal Forms 
+
+**Conjunctive Normal Form**: A.K.A CNF can be defined for every formula in the predicate and propositional (will be discussed later) logic. The length of the formula may grow exponentially doing so, however, there are tricks for optimizing the length while preserving satisfiability (not Equality). 
+
+**Negation Normal Form**: A.K.A NNF is a superset of CNF which exists for Description Logic as well unlike CNF. It is not unique and just accepts atomic statements not longer/compound ones. 
+
+**Horn Cluses**: A computationally demanding form of any formula that consists of the disjunction of predicates with at least one positive. 
+
+# Why Various Logic Families?
+Since logic is a description of a world the main properties one may want to be reflected from the world determines the family of the logic.  For instance: 
+
+ - Propositional logic: meant to describe worlds consisting of atomic
+   facts (statuses)
+ - Predicate logic: is designed to be able to reflect individuals and
+   their properties in the world.
+ - Temporal logic: sees the world as a transient model which changes
+   constantly.
+ - Fuzzy logic: is able to show worlds with partly true/false
+   statements.
+ - Modal logic: assigns probability to each state of the world.
+
+After choosing a logic two more questions need to be addressed. 
+1. What should be the logical language for representing the world?
+2. How to make true preserving proofs using the language?
+ 
+ 
+# Popular Logic Forms 
+
+Propositional logic is the most basic form of logic that includes atomic facts and their combinations. It uses connectives, such as conjunction, disjunction, and implication, to combine atomic facts, and truth tables to determine the logical value of a compound statement. The truth table may grow by an exponential coefficient of the involved atomic facts.
+
+Predicate logic, also known as First Order Logic (FOL), models the world as a system of individuals with specific properties. FOL has specific operators for showing Universal and Existential statements. It can define n-array relations between different individuals and functions with N arguments that return other individuals. FOL is quite rich in terms of proof rules. Unification is the best method for machines to drive new statements, and Tableau and Natural Deduction can be considered more human-friendly ways of proofing this logic. It's worth mentioning that in finite worlds, FOL can be written in propositional logic, but with the cost of growing exponentially.
+
+Description Logic is a part of predicate logic specialized in reflecting ontological information about the world. They can be discriminated based on computational properties. The most famous one has unary predicates (concepts), binary relations (roles), and implications (subsumption). Most of the description logic families are decidable. Tableaux is a famous way of proving; however, it may be translated to propositional/predicate logics as well.
+
+Modal logic is capable of reflecting higher-level things about statements, such as belief or knowledge. It is best suited for a multi-agent setting and can express things like omniscience, veracity, introspection, and perfect agent. The statement can be extended on conjunctions but not disjunctions. Such terminology can be extended further for applications and permissions named Doxatic Logic (expanding over disjunction is still not allowed).
+
+Temporal logic can be seen as a type of modal logic when "being true in the past/future is a statement." A famous statement can be visualized as follows: 
+
+Fuzzy logic simply states that not all statements are binary. Each statement can be true with a probability value between 0 and 1. The rules of proofing are also defined based on such property. For example:
+
+
+ 
